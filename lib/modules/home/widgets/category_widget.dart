@@ -80,7 +80,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                       setState(() {});
                     },
                     child: Container(
-                      width: 140,
+                      width: 130,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(360),
                           color: AppColors.black.withOpacity(0.6)),
@@ -95,14 +95,14 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                             child: Text(
                               "View All",
                               style:
-                                  TextStyle(fontSize: 18, color: Colors.white),
+                                  TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           ),
                           Transform.translate(
                             offset: offset,
                             child: CircleAvatar(
                               backgroundColor: AppColors.black,
-                              radius: 28,
+                              radius: 26,
                               child: Icon(
                                 widget.isLeft
                                     ? Icons.arrow_back_ios_new
