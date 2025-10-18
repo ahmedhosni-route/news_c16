@@ -38,7 +38,8 @@ dependencies:
   animate_do: ^4.2.0
   dio:
   cached_network_image:
-  provider: 
+  provider:
+  flutter_bloc:
 
 dev_dependencies:
   flutter_test:
