@@ -40,6 +40,9 @@ dependencies:
   cached_network_image:
   provider:
   flutter_bloc:
+  internet_connection_checker:
+  hive:
+  path_provider:
 
 dev_dependencies:
   flutter_test:

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/theme/app_colors.dart';
-import 'package:news/modules/home/pages/news_screen.dart';
 import '../cubit/news_cubit.dart';
 import '../cubit/news_state.dart';
 import 'category_screen.dart';
+import 'news_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,9 +18,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => NewsCubit(),
-        child: BlocBuilder<NewsCubit , NewsState>(
+        child: BlocConsumer<NewsCubit, NewsState>(
+          listener: (context, state) {
+            // var cubit = context.read<NewsCubit>();
+            //
+            // if (state is HasConnection && cubit.selectedCategory != null) {
+            //   // cubit.init();
+            //   ScaffoldMessenger.of(context)
+            //       .showSnackBar(SnackBar(content: Text("Has Connection")));
+            // }else if(state is HasNotConnection){
+            //   ScaffoldMessenger.of(context)
+            //       .showSnackBar(SnackBar(content: Text("Has Not Connection")));
+            // }
+          },
+          // listenWhen: (previous, current) {
+          //   return current is HasConnection || current is HasNotConnection;
+          // },
           builder: (context, state) {
-            var cubit  = context.watch<NewsCubit>();
+            var cubit = context.watch<NewsCubit>();
             return Scaffold(
               drawer: Drawer(
                 child: Column(
@@ -58,12 +73,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   cubit.selectedCategory?.name ?? "Home",
                   style: const TextStyle(color: Colors.white),
                 ),
-                actions:  [
+                actions: [
                   InkWell(
                     onTap: () {
                       cubit.onSearch();
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.search,
                       color: Colors.white,
                     ),
@@ -72,9 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               body: cubit.selectedCategory == null
                   ? CategoryScreen()
-                  : NewsScreen(
-
-                    ),
+                  : NewsScreen(),
             );
           },
         ));

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/categories/categories.dart';
-import 'package:news/main.dart';
-import 'package:news/modules/home/pages/news_screen.dart';
-
-import '../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_colors.dart';
 
 class CategoryWidget extends StatefulWidget {
   Category category;

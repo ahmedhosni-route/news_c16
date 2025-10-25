@@ -2,7 +2,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:news/core/theme/app_colors.dart';
 import 'package:news/main.dart';
-import 'package:news/modules/home/pages/home_screen.dart';
+
+import '../../home/view/pages/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
